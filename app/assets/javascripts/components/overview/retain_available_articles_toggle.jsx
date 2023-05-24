@@ -3,7 +3,6 @@ import YesNoSelector from './yes_no_selector';
 import ArticleUtils from '../../utils/article_utils';
 
 const RetainAvailableArticlesToggle = ({ course, editable, updateCourse }) => {
-  if (!Features.wikiEd) { return null; }
   return (
     <YesNoSelector
       courseProperty="retain_available_articles"

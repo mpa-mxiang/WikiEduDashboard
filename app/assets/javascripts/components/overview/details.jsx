@@ -364,17 +364,10 @@ const Details = createReactClass({
           updateCourse={this.props.updateCourse}
         />
       );
-      retainAvailableArticlesToggle = (
-        <RetainAvailableArticlesToggle
-          course={this.props.course}
-          editable={this.props.editable}
-          updateCourse={this.props.updateCourse}
-        />
-      );
     }
 
-    // Users who can rename a course are also allowed to change the type.
     if (canRename) {
+      // Users who can rename a course are also allowed to change the type.
       courseTypeSelector = (
         <CourseTypeSelector
           course={this.props.course}
@@ -382,10 +375,15 @@ const Details = createReactClass({
           updateCourse={this.props.updateCourse}
         />
       );
-    }
-
-    // Users who can rename a course are also allowed to make it private.
-    if (canRename) {
+      // Users who can rename a course can configure the Available Articles behavior.
+      retainAvailableArticlesToggle = (
+        <RetainAvailableArticlesToggle
+          course={this.props.course}
+          editable={this.props.editable}
+          updateCourse={this.props.updateCourse}
+        />
+      );
+      // Users who can rename a course are also allowed to make it private.
       privacySelector = (
         <PrivacySelector
           course={this.props.course}
